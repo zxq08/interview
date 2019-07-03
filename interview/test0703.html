@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>面试题测试</title>
+	<style type="text/css">
+		.data-box{
+			margin: 0 auto;
+			text-align: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto ;
+		}
+		.data-margin{
+			width: 400px;
+			height: 400px;
+			background-color: orange;
+		}
+		.data-border{
+			width: 300px;
+			height: 300px;
+			background-color: yellow;
+		}
+		.data-padding{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		.data-content{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+
+		}
+		.data-relative{
+			position: relative;
+			background-color: blue;
+			width: 200px;
+			height: 200px;
+			left: 50%;
+			top: 0;
+			margin-left: -100px;
+		}
+		.data-absolute{
+			position: absolute;
+			background-color: red;
+			width: 100px;
+			height: 100px;
+			left: 50%;
+			top: 50%;
+			margin: -50px 0 0 -50px;
+		}
+	</style>
+</head>
+<body>
+<!-- 1.(1)CSS 盒子模型 -->
+<div class='data-box data-margin'>
+	margin
+	<div class='data-box data-border'>
+		border
+		<div class='data-box data-padding'>
+			padding
+			<div class='data-box data-content'>
+				content
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- 1.(2)绝对定位和相对定位 -->
+<div class='data-relative'>
+	<div class='data-absolute'></div>	
+</div>
+
+<!-- 2.清除浮动 -->
+<!-- 3.浮层水平垂直居中 -->
+<!-- 4.position 和 display 的取值和各自的意思和用法 -->
+<!-- 5. 样式的层级关系，选择器优先级，样式冲突，以及抽离样式模块怎么写 -->
+<!-- 6.(1)css3动画效果属性 -->
+<!-- 6.(2)canvas、svg的区别 -->
+<!-- 6.(3)CSS3中新增伪类举例 -->
+<!-- 7.(1)px和em和rem的区别 -->
+<!-- 7.(2)CSS中link 和@import的区别是? -->
+<!-- 8.flex -->
+</body>
+</html>
