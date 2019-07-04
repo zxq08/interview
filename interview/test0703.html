@@ -3,6 +3,10 @@
 <head>
 	<title>面试题测试</title>
 	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
 		.data-box{
 			margin: 0 auto;
 			text-align: center;
@@ -52,11 +56,59 @@
 			top: 50%;
 			margin: -50px 0 0 -50px;
 		}
-	</style>
+		.data-float-parent{
+			width: 200px;
+			/*height: 200px;*/
+			border: 1px solid red;
+		}
+		.data-float-child1{
+			width: 100px;
+			height: 100px;
+			float: left;
+			background-color: #00c0ef;
+		}
+		.data-float-child2{
+			width: 100px;
+			height: 100px;
+			float: left;
+			background-color: orange;
+		}
+		.clear{
+			clear: both;
+		}
+		.clear-float:after{
+			content: "";
+			display: table; 
+			clear: both;
+		}
+		/*采用 display: table;  方法可以有效避免浏览器兼容问题*/
+		/*.clear-float{
+			overflow: hidden;
+			zoom: 1;
+		}*/
+		/* zoom:1; 兼容IE6 */
+		.data-container{
+			border: 1px solid pink;
+			width: 200px;
+			height: 200px;
+		}
+		.data-fixed-content{
+			width: 100px;
+			height: 100px;
+			background-color: #e3e3e3;
+			position: fixed;
+			z-index: 10;
+			left: 100px; /* 父元素宽度一半 */
+			top: 100px; /* 父元素高度一半 */
+			right: 0;
+			bottom: 0;
+			margin:-50px 0 0 -50px; /* 自身宽度一半 0 0 自身高度一半 */
+		}
+</style>
 </head>
 <body>
 <!-- 1.(1)CSS 盒子模型 -->
-<div class='data-box data-margin'>
+<!-- <div class='data-box data-margin'>
 	margin
 	<div class='data-box data-border'>
 		border
@@ -67,18 +119,40 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 
 <!-- 1.(2)绝对定位和相对定位 -->
-<div class='data-relative'>
+<!-- <div class='data-relative'>
 	<div class='data-absolute'></div>	
-</div>
+</div> -->
 
 <!-- 2.清除浮动 -->
+<!-- <div class="data-float-parent clear-float">
+	<div class="data-float-child1"></div>
+	<div class="data-float-child2"></div>
+</div> --><!-- -->
+
 <!-- 3.浮层水平垂直居中 -->
+<!-- <div class='data-container'>
+	<div class='data-fixed-content'></div>
+</div> -->
+
 <!-- 4.position 和 display 的取值和各自的意思和用法 -->
+<!-- <div>
+	<ul>
+		<li>
+			<p>	position: absolute(绝对定位)/relative(相对定位)/static(默认)/fixed(固定定位)/inherit(继承父元素定位)</p>
+		</li>
+		<li>
+			<p>	display: block(块级元素)/inline-block(行内块)/inline(行内元素)/none(不加载)/-webkit-flex(flex布局)/inherit(继承父元素定位)</p>
+		</li>
+	</ul>
+</div> -->
 <!-- 5. 样式的层级关系，选择器优先级，样式冲突，以及抽离样式模块怎么写 -->
+<div>
+	<p></p>
+</div>
 <!-- 6.(1)css3动画效果属性 -->
 <!-- 6.(2)canvas、svg的区别 -->
 <!-- 6.(3)CSS3中新增伪类举例 -->
