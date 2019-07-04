@@ -104,6 +104,46 @@
 			bottom: 0;
 			margin:-50px 0 0 -50px; /* 自身宽度一半 0 0 自身高度一半 */
 		}
+		@keyframes data-animation{
+			from{
+				background-color: #e3e3e3;
+			}
+			to{
+				background-color: pink;
+			}
+		}
+		-moz-@keyframes data-animation{
+			from{
+				background-color: #e3e3e3;
+			}
+			to{
+				background-color: pink;
+			}
+		}
+		-webkit-@keyframes data-animation{
+			from{
+				background-color: #e3e3e3;
+			}
+			to{
+				background-color: pink;
+			}
+		}
+		-o-@keyframes data-animation{
+			from{
+				background-color: #e3e3e3;
+			}
+			to{
+				background-color: pink;
+			}
+		}
+		.data-animation-container{
+			width: 200px;
+			height: 200px;
+			animation: data-animation 4s;
+			-moz-animation: data-animation 4s;
+			-webkit-animation: data-animation 4s;
+			-o-animation: data-animation 4s;
+		}
 </style>
 </head>
 <body>
@@ -150,14 +190,55 @@
 	</ul>
 </div> -->
 <!-- 5. 样式的层级关系，选择器优先级，样式冲突，以及抽离样式模块怎么写 -->
-<div>
-	<p></p>
-</div>
+<!-- <div>
+	<p>
+		!important(INF) > 行内style(1000) > id(100) > class(10) > tagName(1) > *(0) <br>
+		同权重时，优先级高的生效；同优先级时，就近生效。 <br>
+	</p>
+	<p>
+		抽离样式模块：参考zxq-ui的reset.css <br>
+		例如
+		 <li>去掉a标签的下划线和颜色，hover </li>
+		 <li>去掉ul、ol的 list-style </li> 
+		 <li>去掉默认的margin、padding </li> 
+		 <li>表格的border-collapse:collapse; border-spacing:0;  合并内边框，去掉内边距</li>
+	</p>
+</div> -->
 <!-- 6.(1)css3动画效果属性 -->
+<!-- <div class="data-animation-container">
+	
+</div> -->
 <!-- 6.(2)canvas、svg的区别 -->
+
+
 <!-- 6.(3)CSS3中新增伪类举例 -->
+<!-- <p>
+	<li>:root</li>
+	<li>:empty</li>
+	<li>:first-child</li>
+	<li>:last-child</li>
+	<li>:only-child</li>
+	<li>:checked</li>
+	<li>:before</li>
+	<li>:after</li>
+</p> -->
+
 <!-- 7.(1)px和em和rem的区别 -->
+<ul>
+	<li>
+		px: 固定像素，硬件决定，
+	</li>
+	<li>
+		em: 父元素的倍数，宽度对宽度，高度对高度
+	</li>
+	<li>
+		rem: 页面根元素的倍数（html），兼容性差
+	</li>
+</ul>
+
 <!-- 7.(2)CSS中link 和@import的区别是? -->
+
+
 <!-- 8.flex -->
 </body>
 </html>
