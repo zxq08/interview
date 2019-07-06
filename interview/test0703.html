@@ -3,10 +3,10 @@
 <head>
 	<title>面试题测试</title>
 	<style type="text/css">
-		*{
+		/**{
 			margin: 0;
 			padding: 0;
-		}
+		}*/
 		.data-box{
 			margin: 0 auto;
 			text-align: center;
@@ -209,9 +209,30 @@
 	
 </div> -->
 <!-- 6.(2)canvas、svg的区别 -->
-<div>
-	
-</div>
+<!-- <div>
+	<li>
+		<p><b>Canvas : </b></p>
+		<p>通过 JavaScript 绘制2D图形，逐像素进行渲染</p>
+		<p>一旦绘制完成，就不会继续得到浏览器的关注，如果其位置发生变化，那么整个场景需要重新绘制，包括任何
+		或许已被图形覆盖的对象</p>
+	</li>
+	<li>
+		<p><b>SVG : </b></p>
+		<p>使用 XML 的描述2D图形的语言，SVG DOM 中的每个元素都是可用的。即可以为每个元素添加 JavaScript 事件处理器</p>
+		<p>SVG 中每个被绘制的图形被视为对象，如果 SVG 对象属性发现变化，浏览器能够自动重现图形</p>
+	</li>
+	<li>
+		<p><b>Canvas 与 SVG 对比：</b></p>
+		<ol>
+			<li>Canvas依赖分辨率</li>
+			<li>SVG支持事件处理器</li>
+			<li>SVG适合带有大型渲染区域的应用程序（比如地图），Canvas弱的文本渲染能力</li>
+			<li>Canvas能够以.png 或 .jpg 的格式保存</li>
+			<li>SVG复杂度高会减慢渲染速度（过度操作DOM）</li>
+			<li>Canvas更适合图像密集的游戏，其中许多对象会被频繁重绘</li>
+		</ol>
+	</li>
+</div> -->
 
 <!-- 6.(3)CSS3中新增伪类举例 -->
 <!-- <p>
@@ -248,5 +269,89 @@
 </p> -->
 
 <!-- 8.flex -->
+<div>
+	<p>Flex布局——弹性布局</p>
+	<p>display:flex;</p>
+	<p>display:-webkit-flex;</p>
+	<p>display:inline-flex;</p>
+	<p>设为flex布局后，成为flex容器(container)，子元素成为flex项目(item)，子元素的float、clear、vertic将会失效
+	</p>
+	<ul>
+		<li>水平轴main axis，起点为左边main start，终点为右边main end</li>
+		<li>纵轴cross axis，起点为上边cross start，终点为下边cross end</li>
+		<li>项目(ietm)内部宽为main size，高为cross size</li>
+	</ul>
+	<p><b>容器的6个属性：</b></p>
+	<ol>
+		<li><p>flex-direction(默认row)</p>
+			<p>项目排列方向。row(左到右) | row-reverse(右到左) | column(上到下) | column-reverse(下到上)</p>
+		</li>
+
+		<li><p>flex-wrap(默认nowrap)</p>
+			<p>换行设置。nowrap(不换行) | wrap(换行，第一行在上) | wrap-reverse(换行，第一行在下)</p>
+		</li>
+
+		<li>flex-flow（方向和换行的简写）：flex-direction flex-wrap</li>
+
+		<li><p>justify-content(默认flex-start)</p>
+			<p>项目在横轴的对齐方式。</p>
+			<p>默认横轴为从左到右时：flex-start(左对齐) | flex-end(右对齐) | center(水平居中) | 
+			space-between(两端对齐，项目之间间隔相等) | space-around(每个项目两侧间隔相等)</p>
+		</li>
+
+		<li><p>align-items(默认strech)</p>
+			<p>在纵轴的对齐方式。</p>
+			<p>默认为纵轴从上到下时：flex-start(上对齐) | flex-end(下对齐) | center(垂直居中) | 
+			baseline(项目第一行文字的基线对齐) | strech(项目为设置高度时占满)</p>
+		</li>
+
+		<li><p>align-content(默认strech)</p>
+			<p>多根横轴在纵轴方向上的对齐方式。如果只有一根横轴则不生效</p>
+			<p>默认为纵轴从上到下时：flex-start(上对齐) | flex-end(下对齐) | center(垂直居中) | 
+			space-between(两端对齐，横轴之间间隔相等) | space-around(每个横轴两侧间隔相等) | 
+			strech(项目为设置高度时占满)</p>
+		</li>
+	</ol>
+	<p><b>项目的6个属性：</b></p>
+	<ol>
+		<li>
+			<p>order(默认0)</p>
+			<p>项目排列顺序。越小越靠前，整型</p>
+			<p>... -1 0 1 2 3 ...</p>
+		</li>
+		
+		<li>
+			<p>flex-grow(默认为0，即存在剩余空间也不放大)</p>
+			<p>放大比例。数字类型</p>
+			<p>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+		</li>
+
+		<li>
+			<p>flex-shrink(默认为1，如果空间不足则缩小)</p>
+			<p>缩小比例。数字类型</p>
+			<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
+		</li>
+
+		<li>
+			<p>flex-basis(默认auto)</p>
+			<p>项目main size，分配多余空间之前的width</p>
+			<p>flex-basis:350px;</p>
+		</li>
+
+		<li>
+			<p>flex(默认 0 1 auto)</p>
+			<p>flex: flex-grow flex-shrink flex-basis</p>
+			<p>flex:auto(1 1 auto) | none(0 0 auto)</p>
+			<p>建议优先使用快捷值，而不是3个分离的属性，因为浏览器会推算相关值</p>
+		</li>
+
+		<li>
+			<p>align-self(默认auto，继承父元素的align-items，没有父元素时为strech)</p>
+			<p>允许单个项目与其他项目在纵轴对齐方式不同</p>
+			<p>除了auto 都与align-items取值一致</p>
+		</li>
+	</ol>
+</div>
+
 </body>
 </html>
